@@ -1,0 +1,38 @@
+{
+    "name": "andrewcarteruk/typed-arrays",
+    "description": "Typed arrays in PHP.",
+    "keywords": [
+        "typed",
+        "array",
+        "arrays",
+        "string",
+        "double",
+        "object",
+        "class"
+    ],
+    "homepage": "http://github.com/AndrewCarterUK/TypedArrays",
+    "license": "MIT",
+    "authors" : [
+        {
+            "name": "Andrew Carter",
+            "email": "andrewcarter1992@gmail.com",
+            "homepage": "http://andrewcarteruk.github.io/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "TypedArray\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TypedArray\\Test\\": "test/"
+        }
+    }
+}

@@ -30,7 +30,7 @@ class ArrayTest extends \PHPUnit_Framework_TestCase
             array('TypedArray\\CallableArray', array(function () {}, 'is_int')),
             array('TypedArray\\FloatArray', array(1.0, -1.23)),
             array('TypedArray\\IntArray', array(1, -1, 2, 3)),
-            array('TypedArray\\NumericArray', array(0, -1, 1, '4', '0x80', '12E-4', 1.23)),
+            array('TypedArray\\NumericArray', array(0, -1, 1, '4', '12E-4', 1.23)),
             array('TypedArray\\ObjectArray', array(new \stdClass(), new \Exception)),
             array('TypedArray\\ResourceArray', array(STDIN, STDOUT)),
             array('TypedArray\\ScalarArray', array('foo', 1, 2.3, true)),

@@ -1,2 +1,3 @@
-# TypedArrays
-Typed arrays in PHP
+# Typed Arrays
+
+Typed arrays in PHP.

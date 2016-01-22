@@ -2,7 +2,7 @@
 
 namespace TypedArray;
 
-abstract class AbstractTypedArray extends \ArrayIterator
+abstract class AbstractTypedArray extends \ArrayObject implements \IteratorAggregate
 {
     /**
      * @var callable
@@ -53,4 +53,11 @@ abstract class AbstractTypedArray extends \ArrayIterator
             throw new \InvalidArgumentException('Expected ' . $this->type . ', got ' . gettype($value));
         }
     }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this);
+    }
+
+
 }

@@ -11,15 +11,21 @@ class ArrayTest extends \PHPUnit_Framework_TestCase
     {
         $array = new $class();
 
+        // Build an array using general array access
         array_map(function ($value) use ($array) {
             $array[] = $value;
         }, $values);
 
+        // Check elements are the same
         $this->assertSame(count($values), count($array));
 
         for ($i = 0; $i < count($values); $i++) {
             $this->assertSame($values[$i], $array[$i]);
         }
+
+        // Build an array from source
+        $arrayFromSource = new $class($values);
+        $this->assertEquals($array, $arrayFromSource);
     }
 
     public function arrayProvider()
@@ -46,6 +52,15 @@ class ArrayTest extends \PHPUnit_Framework_TestCase
     {
         $array = new $class();
         $array[] = $value;
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @dataProvider exceptionProvider
+     */
+    public function testExceptionFromSource($class, $value)
+    {
+        new $class(array($value));
     }
 
     public function exceptionProvider()

@@ -15,6 +15,10 @@ class InstanceArrayTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('Exception', $array[0]);
         $this->assertInstanceOf('InvalidArgumentException', $array[1]);
+
+        // Build from source should be equivalent
+        $arrayFromSource = new InstanceArray('Exception', array($array[0], $array[1]));
+        $this->assertEquals($array, $arrayFromSource);
     }
 
     /**
@@ -24,5 +28,13 @@ class InstanceArrayTest extends \PHPUnit_Framework_TestCase
     {
         $array = new InstanceArray('InvalidArgumentException');
         $array[] = new \Exception;
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInstanceArrayFromSourceException()
+    {
+        new InstanceArray('InvalidArgumentException', array(new \Exception));
     }
 }

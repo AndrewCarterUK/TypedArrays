@@ -20,10 +20,8 @@ As they are objects, unlike PHP arrays, they are always passed by reference.
 ```php
 use TypedArray\StringArray;
 
-$stringArray = new StringArray();
-
-$stringArray[] = 'Hello, World!';
-$stringArray['foo'] = 'bar';
+$stringArray = new StringArray(['Hello, World!', 'foo' => 'bar']);
+// Or, $stringArray = new StringArray();
 
 try {
     $stringArray[] = 1;
@@ -36,7 +34,7 @@ try {
 use App\Farm\Chicken;
 use TypedArray\InstanceArray;
 
-$chickenArray = new InstanceArray(Chicken::class);
+$chickenArray = new InstanceArray(Chicken::class, [new Chicken('Bob')]);
 
 $chickenArray[] = new Chicken('Tony');
 $chickenArray['foo'] = new Chicken('Alice');

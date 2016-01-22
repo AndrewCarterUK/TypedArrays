@@ -4,8 +4,11 @@ namespace TypedArray;
 
 final class IntArray extends AbstractTypedArray
 {
-    public function __construct()
+    /**
+     * @param array|null $source The source array
+     */
+    public function __construct(array $source = null)
     {
-        parent::__construct('is_int', 'integer');
+        parent::__construct('is_int', 'integer', $source);
     }
 }

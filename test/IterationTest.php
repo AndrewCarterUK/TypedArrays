@@ -16,14 +16,21 @@ class IterationTest extends \PHPUnit_Framework_TestCase
             $array[] = $value;
         }, $values);
 
-        $i = 0;
-        foreach($array as $a){
-            foreach($array as $b){
-                $i++;
+        $length = count($array);
+        $outerSteps = 0;
+        $allSteps = 0;
+        foreach($array as $outerItem){
+            $outerSteps++;
+            $innerSteps = 0;
+            foreach($array as $innerItem){
+                $innerSteps++;
+                $allSteps++;
             }
+            $this->assertEquals($length, $innerSteps,"Wrong number of inner-iterations within outer step $outerSteps");
         }
+        $this->assertEquals($length, $outerSteps, "Wrong number of outer-iterations");
 
-        $this->assertEquals(count($array)*count($array), $i, "Wrong number of nested iterations");
+        $this->assertEquals($length * $length, $allSteps, "Wrong number of combined iterations");
     }
 
     public function arrayProvider()
@@ -39,6 +46,8 @@ class IterationTest extends \PHPUnit_Framework_TestCase
             array('TypedArray\\ResourceArray', array(STDIN, STDOUT)),
             array('TypedArray\\ScalarArray', array('foo', 1, 2.3, true)),
             array('TypedArray\\StringArray', array('foo', 'bar', 'hello world')),
+            array('TypedArray\\IntArray', array(/* Zero items*/ )),
+            array('TypedArray\\IntArray', array(1 /* One item only*/ )),
         );
     }
 }

@@ -47,3 +47,7 @@ try {
     echo $exception->getMessage() . PHP_EOL;
 }
 ```
+
+## Available Types
+
+`ArrayArray`, `BoolArray`, `CallableArray`, `FloatArray`, `InstanceArray($classPath)`, `IntArray`, `NumericArray`, `ObjectArray`, `ResourceArray`, `ScalarArray`, `StringArray`.

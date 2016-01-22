@@ -53,11 +53,4 @@ abstract class AbstractTypedArray extends \ArrayObject
             throw new \InvalidArgumentException('Expected ' . $this->type . ', got ' . gettype($value));
         }
     }
-
-    public function getIterator()
-    {
-        return new \ArrayIterator($this);
-    }
-
-
 }

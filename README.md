@@ -9,12 +9,14 @@
 
 Typed arrays in PHP.
 
+By [AndrewCarterUK ![(Twitter)][http://i.imgur.com/tXSoThF.png]](https://twitter.com/AndrewCarterUK)
+
 ## Install
 
-Installing using [Composer](https://getcomposer.org).
+Install using [Composer](https://getcomposer.org).
 
 ```bash
-composer require andrewcarteruk/typed-arrays
+composer require andrewcarteruk/typed-arrays ^0.1
 ```
 
 ## Warning

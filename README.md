@@ -9,6 +9,10 @@
 
 Typed arrays in PHP.
 
+## Warning
+
+These are objects that act like arrays, they are not native PHP arrays. They will not pass an `is_array()` test. As they are objects, unlike PHP arrays, they are always passed by reference, 
+
 ## Example Usage
 
 ```php
@@ -21,6 +25,22 @@ $stringArray['foo'] = 'bar';
 
 try {
     $stringArray[] = 1;
+} catch (\InvalidArgumentException $exception) {
+    echo $exception->getMessage() . PHP_EOL;
+}
+```
+
+```php
+use App\Farm\Chicken;
+use TypedArray\InstanceArray;
+
+$chickenArray = new InstanceArray(Chicken::class);
+
+$chickenArray[] = new Chicken('Tony');
+$chickenArray['foo'] = new Chicken('Alice');
+
+try {
+    $chickenArray[] = 1;
 } catch (\InvalidArgumentException $exception) {
     echo $exception->getMessage() . PHP_EOL;
 }

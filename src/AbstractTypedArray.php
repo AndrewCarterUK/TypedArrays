@@ -2,7 +2,7 @@
 
 namespace TypedArray;
 
-abstract class AbstractTypedArray extends \ArrayIterator
+abstract class AbstractTypedArray extends \ArrayObject
 {
     /**
      * @var callable

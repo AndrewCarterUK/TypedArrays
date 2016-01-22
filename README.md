@@ -11,7 +11,9 @@ Typed arrays in PHP.
 
 ## Warning
 
-These are objects that act like arrays, they are not native PHP arrays. They will not pass an `is_array()` test. As they are objects, unlike PHP arrays, they are always passed by reference, 
+These are objects that act like arrays, they are not native PHP arrays and will not pass an `is_array()` test.
+
+As they are objects, unlike PHP arrays, they are always passed by reference.
 
 ## Example Usage
 

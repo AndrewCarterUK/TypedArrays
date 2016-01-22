@@ -11,7 +11,7 @@ Typed arrays in PHP.
 
 ## Install
 
-Installing using [composer](https://getcomposer.org).
+Installing using [Composer](https://getcomposer.org).
 
 ```bash
 composer require andrewcarteruk/typed-arrays

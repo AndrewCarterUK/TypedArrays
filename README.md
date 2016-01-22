@@ -9,6 +9,14 @@
 
 Typed arrays in PHP.
 
+## Install
+
+Installing using [composer](https://getcomposer.org).
+
+```bash
+composer require andrewcarteruk/typed-arrays
+```
+
 ## Warning
 
 These are objects that act like arrays, they are not native PHP arrays and will not pass an `is_array()` test.

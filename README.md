@@ -9,7 +9,7 @@
 
 Typed arrays in PHP.
 
-By [AndrewCarterUK ![(Twitter)][http://i.imgur.com/tXSoThF.png]](https://twitter.com/AndrewCarterUK)
+By [AndrewCarterUK ![(Twitter)](http://i.imgur.com/wWzX9uB.png)](https://twitter.com/AndrewCarterUK)
 
 ## Install
 

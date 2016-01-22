@@ -28,6 +28,38 @@ class ArrayTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($array, $arrayFromSource);
     }
 
+    /**
+     * @dataProvider arrayProvider
+     */
+    public function testNestedIteration($class, array $values)
+    {
+        $array = new $class();
+
+        // Build an array using general array access
+        array_map(function ($value) use ($array) {
+            $array[] = $value;
+        }, $values);
+
+        $length = count($array);
+        $outerSteps = 0;
+        $allSteps = 0;
+
+        foreach ($array as $outerItem) {
+            $outerSteps++;
+            $innerSteps = 0;
+
+            foreach ($array as $innerItem) {
+                $innerSteps++;
+                $allSteps++;
+            }
+    
+            $this->assertEquals($length, $innerSteps, 'Wrong number of inner-iterations within outer step ' . $outerSteps);
+        }
+
+        $this->assertEquals($length, $outerSteps, 'Wrong number of outer-iterations');
+        $this->assertEquals($length * $length, $allSteps, 'Wrong number of combined iterations');
+    }
+
     public function arrayProvider()
     {
         return array(

@@ -16,7 +16,7 @@ By [AndrewCarterUK ![(Twitter)](http://i.imgur.com/wWzX9uB.png)](https://twitter
 Install using [Composer](https://getcomposer.org).
 
 ```bash
-composer require andrewcarteruk/typed-arrays ^0.1
+composer require andrewcarteruk/typed-arrays ^0.2
 ```
 
 ## Warning
